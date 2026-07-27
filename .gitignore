@@ -1,0 +1,11 @@
+# Binaries
+*.exe
+
+# Test binary
+*.test
+
+# Makefile in top-level directory
+/Makefile
+
+# env file
+.env
