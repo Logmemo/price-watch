@@ -5,7 +5,14 @@ import "testing"
 func TestParseProduct(t *testing.T) {
 
 	url := "https://www.ozon.ru/product/1880425410"
-	expected := Product{"Go: идиомы и паттерны проектирования, 2-е издание. Язык программирования Golang | Боднер Джон купить на OZON по низкой цене (1880425410)", 2221, 1999, "https://ir.ozone.ru/s3/multimedia-1-o/wc1000/9122389692.jpg", "https://www.ozon.ru/product/1880425410"}
+	expected := Product{
+		1880425410,
+		"Go: идиомы и паттерны проектирования, 2-е издание. Язык программирования Golang | Боднер Джон купить на OZON по низкой цене (1880425410)",
+		2015,
+		1712,
+		"https://ir-15.ozone.ru/s3/multimedia-1-o/wc1000/9122389692.jpg",
+		"https://www.ozon.ru/product/1880425410",
+	}
 
 	result := ParseProduct(url)
 

@@ -9,6 +9,7 @@ import (
 )
 
 type Product struct {
+	OzonID        int
 	Title         string
 	BasicPrice    int
 	DiscountPrice int
@@ -66,6 +67,12 @@ func ParseProduct(url string) Product {
 	}); err != nil {
 		log.Fatalf("Ошибка перехода: %v", err)
 	}
+
+	OzonID, err := page.Locator("button[data-widget='webDetailSKU'] div").TextContent()
+	if err != nil {
+		log.Fatalf("Не удалось найти h1: %v", err)
+	}
+	product.OzonID = priceCleaner(OzonID)
 
 	product.Title, err = page.Locator("head title").TextContent()
 	if err != nil {
